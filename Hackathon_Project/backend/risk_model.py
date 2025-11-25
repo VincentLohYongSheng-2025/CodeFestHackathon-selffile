@@ -90,10 +90,11 @@ def analyze_risk_with_llm(numeric_profile, loan_reason):
         return json.loads(clean_json)
 
     except Exception as e:
-        print(f"Error: {e}")
+        error_msg = f"Detailed Error: {str(e)}"
+        print(error_msg) # Prints to your terminal
         return {
             "risk_score": 50,
             "decision": "MANUAL CHECK",
             "risk_factors": ["AI Connection Error"],
-            "explanation": "Could not reach Hugging Face API. Check internet/token."
+            "explanation": error_msg # <--- Put the real error here so you see it in the UI
         }
