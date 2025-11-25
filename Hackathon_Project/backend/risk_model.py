@@ -5,7 +5,7 @@ from huggingface_hub import InferenceClient
 
 # ---------------- CONFIGURATION ----------------
 # We stick with Zephyr because it is smart, but we will call it correctly now.
-repo_id = "HuggingFaceH4/zephyr-7b-beta"
+repo_id = "google/flan-t5-large"
 
 # Setup the Client securely
 try:
@@ -111,3 +111,4 @@ def analyze_risk_with_llm(numeric_profile, loan_reason):
             "risk_factors": ["AI Connection Error"],
             "explanation": f"Detailed Error: {str(e)}"
         }
+
